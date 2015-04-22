@@ -17,7 +17,6 @@ void MyController::callExternalCamera()
 				"android/provider/MediaStore", "EXTRA_OUTPUT", "Ljava/lang/String;");
 	qDebug() << "MediaStore__EXTRA_OUTPUT.isValid()=" << MediaStore__EXTRA_OUTPUT.isValid();
 
-
 	QAndroidJniObject action = QAndroidJniObject::fromString("android.media.action.IMAGE_CAPTURE");
 	QAndroidJniObject intent=QAndroidJniObject("android/content/Intent","(Ljava/lang/String;)V",
 											   action.object<jstring>());

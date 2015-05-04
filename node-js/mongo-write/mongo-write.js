@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test3');
+mongoose.connect('mongodb://localhost/test3'); //no need to create db in advance
 
-var TodoSchema = new mongoose.Schema({
+var TodoSchema = new mongoose.Schema({ //no need to create table in advance
   name: String,
   completed: Boolean,
   note: String,

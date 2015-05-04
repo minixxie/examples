@@ -29,20 +29,13 @@ app.get('/todo/:todoId/', function (req, res) {
 
 	var todoId = mongoose.Types.ObjectId( unbase64Str );
 
-	Todo.find({_id: todoId}, function (err, todos) {
+	Todo.findById(todoId, function (err, todo) {
 		if (err) return console.error(err);
-		console.log(todos);
-
-		var todo = null;
-		if ( todos.length > 0 )
-		{
-			todo = todos[0];
-		}
+		console.log(todo);
 
 		res.writeHead(200, {'Content-Type': 'application/json'});
 		res.end(JSON.stringify({
 			"isSuccess": true,
-			"foundCount": todos.length,
 			"todo": todo,
 		}));
 	});

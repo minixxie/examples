@@ -156,6 +156,21 @@ public:
 		}
 	}
 
+	void invert(Node *node = 0)
+	{
+		if ( node == 0 )
+			node = root;
+
+		if ( node->left() != 0 )
+			invert( node->left() );
+		if ( node->right() != 0 )
+			invert( node->right() );
+
+		Node *swap = node->m_left;
+		node->m_left = node->m_right;
+		node->m_right = swap;
+	}
+
 };
 
 #endif

@@ -20,6 +20,9 @@ int main()
 	tree.print();
 	//tree.breadthFirstTraverse();
 
-	//std::cout << tree;
+	tree.invert();
+	std::cout << "After invert:" << std::endl;
+	tree.print();
+
 	return 0;
 }
